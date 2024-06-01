@@ -4,11 +4,14 @@ import { Tooltip } from "react-tooltip";
 import Container from "../Container/Container";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import useRole from "../../hooks/useRole";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const [role] = useRole();
+  console.log(role);
 
   const navLinks = (
     <>
@@ -37,6 +40,7 @@ const Navbar = () => {
     try {
       await logoutUser();
       navigate("/login");
+      toast.success("Logout Successful")
     } catch (error) {
       console.log(error);
       toast.error(error.message);

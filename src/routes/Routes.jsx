@@ -4,8 +4,10 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import Dashboard from "../pages/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
+import DashboardLayout from "../layout/DashboardLayout";
+import AddWork from "../components/AddWork";
+import PaymentHistory from "../components/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -25,13 +27,23 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
       {
         path: "/dashboard",
-        element: (
-          <PrivateRoute>
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-        ),
+        element: <AddWork></AddWork>,
+      },
+      {
+        path: "payment-history",
+        element: <PaymentHistory></PaymentHistory>,
       },
     ],
   },
