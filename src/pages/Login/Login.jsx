@@ -3,10 +3,11 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { ImSpinner9 } from "react-icons/im";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Login = () => {
   const { loginUser, loading, setLoading, googleLogin } = useAuth();
-
+  const axiosPublic = useAxiosPublic();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -32,9 +33,21 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
-      await googleLogin();
-      navigate("/");
-      toast.success("Login Successful");
+      const { user } = await googleLogin();
+      const userInfo = {
+        role: "employee",
+        email: user?.email,
+        photo: user?.photoURL,
+        bank_account: 4242424242424242,
+        salary: 25000,
+        designation: "Sales Assistant",
+      };
+
+      const { data: userCreate } = await axiosPublic.post("/users", userInfo);
+      if (userCreate.insertedId) {
+        navigate("/");
+        toast.success("Login Successful");
+      }
     } catch (error) {
       toast.error(`${error.message}`);
       setLoading(false);

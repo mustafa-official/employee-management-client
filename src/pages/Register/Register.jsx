@@ -11,7 +11,8 @@ const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
 
 const Register = () => {
   const navigate = useNavigate();
-  const { registerUser, updateProfileInfo, loading, setLoading, googleLogin } = useAuth();
+  const { registerUser, updateProfileInfo, loading, setLoading, googleLogin } =
+    useAuth();
   const axiosPublic = useAxiosPublic();
   const {
     register,
@@ -22,7 +23,6 @@ const Register = () => {
   const onSubmit = async (data) => {
     // console.log(data.name, imageFile, data.email, data.password);
     const imageFile = { image: data.photo[0] };
-
     try {
       setLoading(true);
       const res = await axiosPublic.post(img_hosting_api, imageFile, {
@@ -33,11 +33,22 @@ const Register = () => {
       if (res.data.success) {
         const image = res.data.data.display_url;
         console.log(image);
+        const userInfo = {
+          role: data.role,
+          email: data.email,
+          photo: image,
+          bank_account: 4000056655665556,
+          salary: 22000,
+          designation: "Digital Marketer",
+        };
         const result = await registerUser(data.email, data.password);
         console.log(result);
         await updateProfileInfo(data.name, image);
-        navigate("/");
-        toast.success("Register Successful");
+        const { data: userCreate } = await axiosPublic.post("/users", userInfo);
+        if (userCreate.insertedId) {
+          navigate("/");
+          toast.success("Register Successful");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -49,9 +60,21 @@ const Register = () => {
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
-      await googleLogin();
-      navigate("/");
-      toast.success("Login Successful");
+      const { user } = await googleLogin();
+      const userInfo = {
+        role: "employee",
+        email: user?.email,
+        photo: user?.photoURL,
+        bank_account: 4242424242424242,
+        salary: 25000,
+        designation: "Sales Assistant",
+      };
+
+      const { data: userCreate } = await axiosPublic.post("/users", userInfo);
+      if (userCreate.insertedId) {
+        navigate("/");
+        toast.success("Login Successful");
+      }
     } catch (error) {
       toast.error(`${error.message}`);
       setLoading(false);
@@ -84,19 +107,6 @@ const Register = () => {
               )}
             </div>
             <div>
-              <label htmlFor="image" className="block mb-2 text-sm">
-                Select Image:
-              </label>
-              <input
-                {...register("photo", { required: true })}
-                type="file"
-                accept="image/*"
-              />
-              {errors.photo && (
-                <small className="text-red-500">This field is required</small>
-              )}
-            </div>
-            <div>
               <label htmlFor="email" className="block mb-2 text-sm">
                 Email address
               </label>
@@ -111,6 +121,33 @@ const Register = () => {
                 <small className="text-red-500">This field is required</small>
               )}
             </div>
+            <div className="pt-2">
+              <select
+                className="w-full px-2 py-2 border rounded-md border-gray-300  bg-gray-200 text-gray-900"
+                {...register("role", { required: true })}
+              >
+                <option value="">Select Role</option>
+                <option value="employee">Employee</option>
+                <option value="hr">HR</option>
+              </select>
+              {errors.role && (
+                <small className="text-red-500">This field is required</small>
+              )}
+            </div>
+            <div>
+              <label htmlFor="image" className="block mb-2 text-sm">
+                Select Image:
+              </label>
+              <input
+                {...register("photo", { required: true })}
+                type="file"
+                accept="image/*"
+              />
+              {errors.photo && (
+                <small className="text-red-500">This field is required</small>
+              )}
+            </div>
+
             <div>
               <div className="flex justify-between">
                 <label htmlFor="password" className="text-sm mb-2">
@@ -164,8 +201,11 @@ const Register = () => {
           </p>
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
         </div>
-        <button disabled={loading} onClick={handleGoogleSignIn} className="flex disabled:cursor-not-allowed justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
-          
+        <button
+          disabled={loading}
+          onClick={handleGoogleSignIn}
+          className="flex disabled:cursor-not-allowed justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer"
+        >
           <FcGoogle size={32} />
 
           <p>Continue with Google</p>

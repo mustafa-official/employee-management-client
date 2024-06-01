@@ -12,14 +12,16 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <NavLink
-        to="/keno"
-        className={({ isActive }) =>
-          isActive ? "  font-bold text-[#00E661]" : ""
-        }
-      >
-        Dashboard
-      </NavLink>
+      {user && (
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            isActive ? "  font-bold text-[#00E661]" : ""
+          }
+        >
+          Dashboard
+        </NavLink>
+      )}
       <NavLink
         to="/keno"
         className={({ isActive }) =>
