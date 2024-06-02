@@ -39,7 +39,7 @@ const Register = () => {
           email: data.email,
           photo: image,
           bank_account: 4000056655665556,
-          salary: 27000,
+          salary: 400,
           designation: "Digital Marketer",
           status: false,
         };
@@ -69,7 +69,7 @@ const Register = () => {
         email: user?.email,
         photo: user?.photoURL,
         bank_account: 4242424242424242,
-        salary: 25000,
+        salary: 250,
         designation: "Sales Assistant",
         status: false,
       };

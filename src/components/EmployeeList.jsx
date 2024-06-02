@@ -6,12 +6,13 @@ import { MdVerified } from "react-icons/md";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import PaymentModal from "../modal/PaymentModal";
+import { Link } from "react-router-dom";
 
 const EmployeeList = () => {
   const axiosSecure = useAxiosSecure();
   const [isOpen, setIsOpen] = useState(false);
   const [salary, setSalary] = useState(null);
-  const [employeeEmail, setEmployeeEmail] = useState("")
+  const [employeeEmail, setEmployeeEmail] = useState("");
   const {
     data: employees = [],
     isLoading,
@@ -169,7 +170,9 @@ const EmployeeList = () => {
                         </div>
                       </td>
                       <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                        <button className="btn">Details</button>
+                        <Link to={`/dashboard/details/${employee?.email}`}>
+                          <button className="btn">Details</button>
+                        </Link>
                       </td>
                       <td className="px-4 py-4 text-sm whitespace-nowrap">
                         <div className="flex items-center gap-x-6">
@@ -194,7 +197,12 @@ const EmployeeList = () => {
           </div>
         </div>
       </div>
-      <PaymentModal salary={salary} isOpen={isOpen} employeeEmail={employeeEmail} closeModal={closeModal}></PaymentModal>
+      <PaymentModal
+        salary={salary}
+        isOpen={isOpen}
+        employeeEmail={employeeEmail}
+        closeModal={closeModal}
+      ></PaymentModal>
     </section>
   );
 };

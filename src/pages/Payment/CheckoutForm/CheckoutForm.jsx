@@ -3,7 +3,6 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import moment from "moment";
 
@@ -15,7 +14,7 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
   const stripe = useStripe();
   const elements = useElements();
   const totalAmount = salary;
-  const navigate = useNavigate();
+
 
   useEffect(() => {
     if (totalAmount > 0) {

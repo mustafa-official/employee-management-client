@@ -52,8 +52,9 @@ const router = createBrowserRouter([
         element: <EmployeeList></EmployeeList>
       },
       {
-        path: '/details/:email',
+        path: 'details/:email',
         element: <EmployeeDetails></EmployeeDetails>
+        
       }
     ],
   },

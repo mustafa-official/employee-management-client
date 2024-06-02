@@ -40,7 +40,7 @@ const Login = () => {
         email: user?.email,
         photo: user?.photoURL,
         bank_account: 4242424242424242,
-        salary: 25000,
+        salary: 250,
         designation: "Sales Assistant",
         status: false,
       };
