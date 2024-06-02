@@ -2,15 +2,18 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
 import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
+import moment from "moment";
 
 const ProgressTask = () => {
   const axiosSecure = useAxiosSecure();
   const [employeeName, setEmployeeName] = useState("");
-
+  const [month, setMonth] = useState("");
   const { data: tasks = [], isLoading } = useQuery({
-    queryKey: ["all-task", employeeName],
+    queryKey: ["all-task", employeeName, month],
     queryFn: async () => {
-      const { data } = await axiosSecure.get(`/all-task?name=${employeeName}`);
+      const { data } = await axiosSecure.get(
+        `/all-task?name=${employeeName}&month=${month}`
+      );
       return data;
     },
   });
@@ -29,6 +32,10 @@ const ProgressTask = () => {
     setEmployeeName(e.target.value);
   };
 
+  const handleMonth = (e) => {
+    setMonth(e.target.value);
+  };
+  console.log(month);
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <section className="container px-4 mx-auto">
@@ -52,7 +59,7 @@ const ProgressTask = () => {
                       className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
                     >
                       <div className="flex items-center gap-x-3">
-                        <select onChange={handleName}>
+                        <select className="bg-gray-50 border rounded-md border-gray-400 p-1" onChange={handleName}>
                           <option value="">Name</option>
                           {taskNames?.map((task, index) => (
                             <option key={index} value={task}>
@@ -83,7 +90,21 @@ const ProgressTask = () => {
                       className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
                     >
                       <div className="flex items-center gap-x-3">
-                        <span>Date</span>
+                        <select className="bg-gray-50 border rounded-md border-gray-400 p-1" onChange={handleMonth}>
+                          <option value="">Month</option>
+                          <option value="1">January</option>
+                          <option value="2">February</option>
+                          <option value="3">March</option>
+                          <option value="4">April</option>
+                          <option value="5">May</option>
+                          <option value="6">June</option>
+                          <option value="7">July</option>
+                          <option value="8">August</option>
+                          <option value="9">September</option>
+                          <option value="10">October</option>
+                          <option value="11">November</option>
+                          <option value="12">December</option>
+                        </select>
                       </div>
                     </th>
                     <th
@@ -111,7 +132,7 @@ const ProgressTask = () => {
                       </td>
 
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                        {task?.date}
+                        {moment(task?.date, "M/D/YYYY").format("MMMM D, YYYY")}
                       </td>
                       <td className="px-4 py-4 text-sm whitespace-nowrap">
                         <div className="flex items-center gap-x-2">
