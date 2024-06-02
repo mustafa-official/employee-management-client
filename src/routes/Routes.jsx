@@ -8,6 +8,8 @@ import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../layout/DashboardLayout";
 import AddWork from "../components/AddWork";
 import PaymentHistory from "../components/PaymentHistory";
+import EmployeeList from "../components/EmployeeList";
+import EmployeeDetails from "../pages/EmployeeDetails/EmployeeDetails";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
         path: "payment-history",
         element: <PaymentHistory></PaymentHistory>,
       },
+      {
+        path: 'employee-list',
+        element: <EmployeeList></EmployeeList>
+      },
+      {
+        path: '/details/:email',
+        element: <EmployeeDetails></EmployeeDetails>
+      }
     ],
   },
 ]);

@@ -10,6 +10,7 @@ import { MdOutlineHistoryToggleOff } from "react-icons/md";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../hooks/useRole";
+import { FaListUl } from "react-icons/fa";
 
 const Sidebar = () => {
   const { logoutUser } = useAuth();
@@ -96,6 +97,25 @@ const Sidebar = () => {
                     <MdOutlineHistoryToggleOff className="w-5 h-5"></MdOutlineHistoryToggleOff>
 
                     <span className="mx-4 font-medium">Payment History</span>
+                  </NavLink>
+                </>
+              )}
+
+              {role === "hr" && (
+                <>
+                  <NavLink
+                    to="/dashboard/employee-list"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaListUl className="w-5 h-5"></FaListUl>
+
+                    <span className="mx-4 font-medium">Employee List</span>
                   </NavLink>
                 </>
               )}

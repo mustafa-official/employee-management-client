@@ -36,11 +36,13 @@ const Login = () => {
       const { user } = await googleLogin();
       const userInfo = {
         role: "employee",
+        name: user?.displayName,
         email: user?.email,
         photo: user?.photoURL,
         bank_account: 4242424242424242,
         salary: 25000,
         designation: "Sales Assistant",
+        status: false,
       };
 
       const { data: userCreate } = await axiosPublic.post("/users", userInfo);

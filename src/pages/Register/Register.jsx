@@ -35,11 +35,13 @@ const Register = () => {
         console.log(image);
         const userInfo = {
           role: data.role,
+          name: data.name,
           email: data.email,
           photo: image,
           bank_account: 4000056655665556,
-          salary: 22000,
+          salary: 27000,
           designation: "Digital Marketer",
+          status: false,
         };
         const result = await registerUser(data.email, data.password);
         console.log(result);
@@ -63,11 +65,13 @@ const Register = () => {
       const { user } = await googleLogin();
       const userInfo = {
         role: "employee",
+        name: user?.displayName,
         email: user?.email,
         photo: user?.photoURL,
         bank_account: 4242424242424242,
         salary: 25000,
         designation: "Sales Assistant",
+        status: false,
       };
 
       const { data: userCreate } = await axiosPublic.post("/users", userInfo);
