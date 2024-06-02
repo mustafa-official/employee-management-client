@@ -6,7 +6,7 @@ import { AiOutlineBars } from "react-icons/ai";
 // import { BsGraphUp } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { MdOutlineHistoryToggleOff } from "react-icons/md";
+import { MdOutlineAddTask, MdOutlineHistoryToggleOff } from "react-icons/md";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../hooks/useRole";
@@ -17,7 +17,7 @@ const Sidebar = () => {
   const [isActive, setActive] = useState(false);
   const navigate = useNavigate();
   const [role] = useRole();
-  console.log(role);
+  // console.log(role);
 
   // Sidebar Responsive Handler
   const handleToggle = () => {
@@ -116,6 +116,20 @@ const Sidebar = () => {
                     <FaListUl className="w-5 h-5"></FaListUl>
 
                     <span className="mx-4 font-medium">Employee List</span>
+                  </NavLink>
+                  <NavLink
+                    to="/dashboard/progress"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdOutlineAddTask className="w-5 h-5"></MdOutlineAddTask>
+
+                    <span className="mx-4 font-medium">Progress</span>
                   </NavLink>
                 </>
               )}

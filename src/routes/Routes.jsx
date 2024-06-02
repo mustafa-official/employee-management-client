@@ -10,6 +10,7 @@ import AddWork from "../components/AddWork";
 import PaymentHistory from "../components/PaymentHistory";
 import EmployeeList from "../components/EmployeeList";
 import EmployeeDetails from "../pages/EmployeeDetails/EmployeeDetails";
+import ProgressTask from "../pages/ProgressTask/ProgressTask";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
         path: 'details/:email',
         element: <EmployeeDetails></EmployeeDetails>
         
+      },
+      {
+        path: 'progress',
+        element: <ProgressTask></ProgressTask>
       }
     ],
   },

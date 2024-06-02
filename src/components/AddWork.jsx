@@ -41,6 +41,7 @@ const AddWork = () => {
     const worked_hours = parseFloat(form.hours.value);
     const newTask = {
       email: user?.email,
+      name: user?.displayName,
       task,
       date,
       worked_hours,
