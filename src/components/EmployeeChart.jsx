@@ -17,29 +17,6 @@ const EmployeeChart = ({ employeeStats }) => {
   return (
     <div className="flex justify-center w-full md:w-[60%] h-[300px] md:h-[400px]">
       <ResponsiveContainer>
-        {/* <BarChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          barSize={20}
-        >
-          <XAxis
-            dataKey="name"
-            scale="point"
-            padding={{ left: 10, right: 10 }}
-          />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="pv" fill="#8884d8" background={{ fill: "#eee" }} />
-        </BarChart> */}
         <BarChart
           width={730}
           height={250}
@@ -47,7 +24,7 @@ const EmployeeChart = ({ employeeStats }) => {
           margin={{ top: 15, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date">
+          <XAxis dataKey="month">
             <Label offset={0} position="insideBottom" />
           </XAxis>
           <YAxis

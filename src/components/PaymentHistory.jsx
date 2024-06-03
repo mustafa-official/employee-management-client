@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import useRole from "../hooks/useRole";
-import moment from "moment";
 import LoadingSpinner from "../shared/LoadingSpinner/LoadingSpinner";
 import { useState } from "react";
 
@@ -86,7 +85,7 @@ const PaymentHistory = () => {
                   {paymentsInfo?.map((item) => (
                     <tr key={item?._id}>
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                        {moment(item?.date, "M/D/YYYY").format("MMMM D, YYYY")}
+                      {item?.month}, {item?.year}
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                         ${item?.price}
