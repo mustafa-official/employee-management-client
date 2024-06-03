@@ -11,6 +11,7 @@ import PaymentHistory from "../components/PaymentHistory";
 import EmployeeList from "../components/EmployeeList";
 import EmployeeDetails from "../pages/EmployeeDetails/EmployeeDetails";
 import ProgressTask from "../pages/ProgressTask/ProgressTask";
+import AllEmployee from "../pages/AllEmployee/AllEmployee";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: 'progress',
         element: <ProgressTask></ProgressTask>
+      },
+      {
+        path: 'admin/all-employee',
+        element: <AllEmployee></AllEmployee>
       }
     ],
   },
