@@ -20,7 +20,7 @@ const PaymentModal = ({ isOpen, closeModal, salary, employeeEmail }) => {
               &#8203;
             </span>
 
-            <div className="relative inline-block px-4 pt-5   text-left align-bottom transition-all transform  border-2  bg-[#413f3fad] rounded-lg shadow-xl dark:bg-gray-900 w-[80%] md:w-[70%] lg:w-[40%] my-8 pb-6 sm:align-middle">
+            <div className="relative inline-block px-4 pt-5   text-left align-bottom transition-all transform border-gray-800 border  bg-white shadow-lg rounded-lg dark:bg-gray-900 w-[80%] md:w-[70%] lg:w-[40%] my-8 pb-6 sm:align-middle">
               {/* Request Now */}
               <div className="absolute top-3 right-3">
                 <button
@@ -31,13 +31,13 @@ const PaymentModal = ({ isOpen, closeModal, salary, employeeEmail }) => {
                 </button>
               </div>
               {/* form */}
-              <div className="hidden">
+              <div className="">
                 <form className="sm:flex sm:items-center sm:-mx-2 px-2 lg:px-6">
                   <div className="flex flex-col gap-3 w-full text-black">
                     <div>
                       <div className="grid grid-cols-1 gap-x-4 gap-y-2 mt-2">
                         <div>
-                          <label className="text-xs text-white">Salary</label>
+                          <label className="text-xs text-black">Salary</label>
 
                           <input
                             readOnly
@@ -48,7 +48,7 @@ const PaymentModal = ({ isOpen, closeModal, salary, employeeEmail }) => {
                         </div>
 
                         <div>
-                          <label className="text-xs text-white" htmlFor="">
+                          <label className="text-xs text-black" htmlFor="">
                             Write Month <span className="text-red-500">*</span>
                           </label>
                           <input
@@ -59,7 +59,7 @@ const PaymentModal = ({ isOpen, closeModal, salary, employeeEmail }) => {
                           />
                         </div>
                         <div>
-                          <label className="text-xs text-white" htmlFor="">
+                          <label className="text-xs text-black" htmlFor="">
                             Write Year <span className="text-red-500">*</span>
                           </label>
                           <input

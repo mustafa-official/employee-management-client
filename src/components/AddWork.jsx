@@ -65,7 +65,7 @@ const AddWork = () => {
       {role === "employee" && (
         <section>
           <form
-            className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-y-5 items-center gap-x-5"
+            className="grid lg:grid-cols-4 md:grid-cols-2 px-3 grid-cols-1 gap-y-5 items-center gap-x-5"
             onSubmit={handleSubmit}
           >
             <div>

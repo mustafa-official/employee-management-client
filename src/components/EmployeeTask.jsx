@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 const EmployeeTask = ({ tasks }) => {
   return (
-    <section className="container mx-auto pt-12">
+    <section className="container px-4 mx-auto pt-12">
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 ">My Tasks</h2>
 

@@ -15,7 +15,6 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
   const elements = useElements();
   const totalAmount = salary;
 
-
   useEffect(() => {
     if (totalAmount > 0) {
       axiosSecure
@@ -95,7 +94,7 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
             style: {
               base: {
                 fontSize: "16px",
-                color: "#fff",
+                color: "#000",
                 "::placeholder": {
                   color: "#aab7c4",
                 },
@@ -114,7 +113,7 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
           Pay Now
         </button>
         <br />
-        <small>{error}</small>
+        <small className="text-red-500">{error}</small>
       </form>
     </div>
   );
