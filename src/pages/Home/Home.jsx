@@ -1,12 +1,17 @@
+import Banner from "../../components/Banner";
+import Testimonials from "../../components/Testimonials";
 import Container from "../../shared/Container/Container";
 
 const Home = () => {
   return (
-    <Container>
-      <section>
-        <h3 className="text-3xl">home page</h3>
-      </section>
-    </Container>
+    <section>
+      <div>
+        <Banner></Banner>
+      </div>
+      <Container>
+        <Testimonials></Testimonials>
+      </Container>
+    </section>
   );
 };
 

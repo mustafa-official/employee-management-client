@@ -5,6 +5,7 @@ import Container from "../Container/Container";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../../hooks/useRole";
+import logo from "../../assets/img/logo.png";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
@@ -19,7 +20,7 @@ const Navbar = () => {
         <NavLink
           to="/dashboard"
           className={({ isActive }) =>
-            isActive ? "  font-bold text-[#00E661]" : ""
+            isActive ? "  font-bold text-[#2461E9]" : ""
           }
         >
           Dashboard
@@ -28,7 +29,7 @@ const Navbar = () => {
       <NavLink
         to="/contact"
         className={({ isActive }) =>
-          isActive ? "  font-bold text-[#00E661]" : ""
+          isActive ? "  font-bold text-[#2461E9]" : ""
         }
       >
         Contact Us
@@ -52,8 +53,10 @@ const Navbar = () => {
         <div className="py-4">
           <div className="lg:flex lg:items-center lg:justify-between">
             <div className="flex items-center justify-between">
-              <h2 className="text-3xl font-bold">
-                <Link>Employee Management</Link>
+              <h2 className="text-xl font-bold">
+                <Link to="/">
+                  <img className="w-40" src={logo} alt="" />
+                </Link>
               </h2>
 
               {/* Mobile menu button */}
@@ -138,7 +141,7 @@ const Navbar = () => {
                       </div>
                       <ul
                         tabIndex={0}
-                        className="mt-2 z-[1] p-2 shadow-md rounded-md border border-[#00E661] menu menu-sm  dropdown-content bg-base-200 w-52"
+                        className="mt-2 z-[1] p-2 shadow-md rounded-md border border-[#2461E9] menu menu-sm  dropdown-content bg-base-200 w-52"
                       >
                         <li>
                           <button onClick={handleLogout}>Logout</button>
@@ -153,15 +156,13 @@ const Navbar = () => {
                 ) : (
                   <>
                     <Link to="/login">
-                      <button className="rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
-                        <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                        <span className="relative">Login</span>
+                      <button className="px-6 py-2 font-medium tracking-wide text-black hover:text-white capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-full hover:bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                        Login
                       </button>
                     </Link>
                     <Link to="/register">
-                      <button className="ml-4 rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
-                        <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                        <span className="relative">Register</span>
+                      <button className="px-6 ml-4 py-2 font-medium tracking-wide hover:text-black  capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-full hover:bg-transparent text-white  bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                        Sign Up
                       </button>
                     </Link>
                   </>

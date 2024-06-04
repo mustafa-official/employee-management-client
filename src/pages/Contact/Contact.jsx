@@ -196,7 +196,7 @@ const Contact = () => {
 
           <div className="mt-8 lg:w-1/2 lg:mx-6">
             <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
-              <h1 className="text-xl font-medium text-gray-700 dark:text-gray-200">
+              <h1 className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-200">
                 Contact form
               </h1>
 
@@ -234,7 +234,7 @@ const Contact = () => {
                   <textarea
                     required
                     name="message"
-                    className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                    className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-36 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                     placeholder="Message"
                   ></textarea>
                 </div>
