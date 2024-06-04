@@ -40,7 +40,7 @@ const Navbar = () => {
     try {
       await logoutUser();
       navigate("/login");
-      toast.success("Logout Successful")
+      toast.success("Logout Successful");
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -138,12 +138,16 @@ const Navbar = () => {
                       </div>
                       <ul
                         tabIndex={0}
-                        className="mt-3 z-[1] p-2 shadow-md rounded-md border border-[#00E661] menu menu-sm  dropdown-content bg-base-200 w-52"
+                        className="mt-2 z-[1] p-2 shadow-md rounded-md border border-[#00E661] menu menu-sm  dropdown-content bg-base-200 w-52"
                       >
                         <li>
                           <button onClick={handleLogout}>Logout</button>
                         </li>
                       </ul>
+
+                      <div className="sm:hidden ">
+                        <button onClick={handleLogout}>Logout</button>
+                      </div>
                     </div>
                   </>
                 ) : (

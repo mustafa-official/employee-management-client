@@ -12,7 +12,7 @@ const PaymentModal = ({ isOpen, closeModal, salary, employeeEmail }) => {
           role="dialog"
           aria-modal="true"
         >
-          <div className="flex backdrop-blur-sm items-end justify-center min-h-screen  pt-4  text-center sm:block sm:p-0">
+          <div className="flex backdrop-blur-md items-end justify-center min-h-screen  pt-4  text-center sm:block sm:p-0">
             <span
               className="hidden sm:inline-block sm:h-screen sm:align-middle"
               aria-hidden="true"
@@ -20,7 +20,7 @@ const PaymentModal = ({ isOpen, closeModal, salary, employeeEmail }) => {
               &#8203;
             </span>
 
-            <div className="relative inline-block  pt-   text-left align-bottom transition-all transform border-gray-800 border  bg-white shadow-lg rounded-lg dark:bg-gray-900 w-[80%] md:w-[70%] lg:w-[40%] my-4 md:py-4 md:px-3 sm:align-middle">
+            <div className="relative inline-block text-left align-bottom transition-all transform border-gray-800 border  bg-white shadow-lg rounded-lg dark:bg-gray-900 w-[80%] md:w-[70%] lg:w-[40%] my-4 md:py-4 md:px-3 sm:align-middle">
               {/* Request Now */}
               <div className="absolute top-3 right-3">
                 <button
