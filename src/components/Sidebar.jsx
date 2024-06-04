@@ -11,7 +11,7 @@ import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../hooks/useRole";
 import { FaListUl } from "react-icons/fa";
-import { FaPeopleRoof } from "react-icons/fa6";
+import { FaPeopleRoof, FaRegMessage } from "react-icons/fa6";
 
 const Sidebar = () => {
   const { logoutUser } = useAuth();
@@ -152,6 +152,19 @@ const Sidebar = () => {
                     <FaPeopleRoof className="w-5 h-5"></FaPeopleRoof>
 
                     <span className="mx-4 font-medium">All Employee</span>
+                  </NavLink>
+                  <NavLink
+                    to="/dashboard/admin/messages"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaRegMessage className="w-5 h-5"></FaRegMessage>
+                    <span className="mx-4 font-medium">Messages</span>
                   </NavLink>
                 </>
               )}

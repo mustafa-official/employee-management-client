@@ -26,7 +26,7 @@ const Navbar = () => {
         </NavLink>
       )}
       <NavLink
-        to="/keno"
+        to="/contact"
         className={({ isActive }) =>
           isActive ? "  font-bold text-[#00E661]" : ""
         }

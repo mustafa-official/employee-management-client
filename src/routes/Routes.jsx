@@ -12,6 +12,8 @@ import EmployeeList from "../components/EmployeeList";
 import EmployeeDetails from "../pages/EmployeeDetails/EmployeeDetails";
 import ProgressTask from "../pages/ProgressTask/ProgressTask";
 import AllEmployee from "../pages/AllEmployee/AllEmployee";
+import Contact from "../pages/Contact/Contact";
+import Messages from "../components/Messages";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
     ],
   },
@@ -50,21 +56,24 @@ const router = createBrowserRouter([
         element: <PaymentHistory></PaymentHistory>,
       },
       {
-        path: 'employee-list',
-        element: <EmployeeList></EmployeeList>
+        path: "employee-list",
+        element: <EmployeeList></EmployeeList>,
       },
       {
-        path: 'details/:email',
-        element: <EmployeeDetails></EmployeeDetails>
-        
+        path: "details/:email",
+        element: <EmployeeDetails></EmployeeDetails>,
       },
       {
-        path: 'progress',
-        element: <ProgressTask></ProgressTask>
+        path: "progress",
+        element: <ProgressTask></ProgressTask>,
       },
       {
-        path: 'admin/all-employee',
-        element: <AllEmployee></AllEmployee>
+        path: "admin/all-employee",
+        element: <AllEmployee></AllEmployee>,
+      },
+      {
+        path: "admin/messages",
+        element: <Messages></Messages>
       }
     ],
   },
