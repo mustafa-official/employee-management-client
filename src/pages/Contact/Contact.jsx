@@ -1,9 +1,13 @@
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useState } from "react";
+import { ImSpinner9 } from "react-icons/im";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const axiosPublic = useAxiosPublic();
   const handleForm = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -20,9 +24,11 @@ const Contact = () => {
           text: "We Recorded Your Message!",
           icon: "success",
         });
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
   return (
@@ -234,10 +240,15 @@ const Contact = () => {
                 </div>
 
                 <button
+                  disabled={loading}
                   type="submit"
-                  className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                  className="w-full disabled:cursor-not-allowed px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                 >
-                  get in touch
+                  {loading ? (
+                    <ImSpinner9 className="animate-spin m-auto"></ImSpinner9>
+                  ) : (
+                    "get in touch"
+                  )}
                 </button>
               </form>
             </div>

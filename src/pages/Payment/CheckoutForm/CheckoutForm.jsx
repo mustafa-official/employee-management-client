@@ -7,6 +7,7 @@ import useAuth from "../../../hooks/useAuth";
 import moment from "moment";
 import { IoIosClose } from "react-icons/io";
 import { ImSpinner9 } from "react-icons/im";
+import { useQuery } from "@tanstack/react-query";
 
 const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
   const [error, setError] = useState("");
@@ -18,6 +19,19 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
   const elements = useElements();
   const totalAmount = salary;
 
+  //from payment collection
+  const { data: usersPaymentInfo = [] } = useQuery({
+    queryKey: ["usersPaymentsInfo", employeeEmail],
+    queryFn: async () => {
+      const { data } = await axiosSecure.get(
+        `/usersPaymentsInfo/${employeeEmail}`
+      );
+      return data;
+    },
+  });
+  const existMonth = usersPaymentInfo.map((item) => item?.month.toLowerCase());
+  const existYear = usersPaymentInfo.map((item) => item?.year);
+
   useEffect(() => {
     if (totalAmount > 0) {
       axiosSecure
@@ -27,12 +41,19 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
   }, [axiosSecure, totalAmount]);
 
   const handleSubmit = async (event) => {
+    event.preventDefault();
+    const inputMonth = event.target?.month?.value.toLowerCase();
+    const inputYear = event.target?.year?.value;
+    if (existMonth.includes(inputMonth) && existYear.includes(inputYear)) {
+      return toast.error("Already Paid !!");
+    }
     setLoading(true);
     event.preventDefault();
 
     if (!stripe || !elements) {
       return;
     }
+
     const card = elements.getElement(CardElement);
     if (card == null) {
       return;

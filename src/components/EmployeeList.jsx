@@ -13,6 +13,8 @@ const EmployeeList = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [salary, setSalary] = useState(null);
   const [employeeEmail, setEmployeeEmail] = useState("");
+
+  //from user collection
   const {
     data: employees = [],
     isLoading,
@@ -24,6 +26,8 @@ const EmployeeList = () => {
       return data;
     },
   });
+
+  
   const handleVerify = async (employee) => {
     // console.log(id);
     const newStatus = { status: true };
@@ -181,6 +185,7 @@ const EmployeeList = () => {
                             onClick={() => {
                               setSalary(employee?.salary);
                               setEmployeeEmail(employee?.email);
+
                               openModal();
                             }}
                             className="btn disabled:cursor-not-allowed"
