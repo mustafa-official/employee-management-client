@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 const TestimonialData = ({ image, name, review }) => {
   return (
-    <div className="container flex border rounded-md  flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly">
+    <div className="container mt-4 flex border rounded-md  flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly">
       <div className="flex flex-col max-w-[290px] shadow-lg">
         <div className="py-12 rounded-t-lg dark:bg-gray-50">
           <p className="relative px-6 py-1 text-[16px] text-center dark:text-gray-800">

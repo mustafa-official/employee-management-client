@@ -1,69 +1,28 @@
 import Lottie from "lottie-react";
 import animate from "../assets/banner.json";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
-    <div className="flex flex-col px-4 justify-center py-8 lg:py-4 md:px-14 bg-gradient-to-r bg-[#ddddddee]   lg:flex-row lg:items-center">
+    <div className="flex flex-col px-4 justify-center py-8 lg:py-4 md:px-14 bg-gradient-to-r bg-[#F3F4F6]   lg:flex-row lg:items-center">
       <div className="w-full lg:w-1/2">
-        <div className="lg:max-w-lg">
-          <h1 className="text-3xl font-black tracking-wide text-gray-800 dark:text-white lg:text-6xl">
-            Easiest way to <span className="text-[#2255d3]">create</span> your
-            website
+        <div className="lg:max-w-xl">
+          <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white md:text-4xl lg:text-5xl">
+            Simplify <span className="text-[#2461E9]">Staff</span> Success with
+            Our Platform
           </h1>
 
-          <div className="mt-8 space-y-5">
-            <p className="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 mx-2 text-blue-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span className="mx-2">Clean and Simple Layout</span>
+          <div className="mt-4">
+            <p>
+              Streamline HR tasks, boost employee engagement, and optimize
+              performance with our management platform.
             </p>
-
-            <p className="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 mx-2 text-blue-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span className="mx-2">Just Copy Paste Coding</span>
-            </p>
-
-            <p className="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 mx-2 text-blue-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span className="mx-2">Easy to Use</span>
-            </p>
+          </div>
+          <div className="mt-6">
+            <Link to="/register">
+              <button className="px-4 py-2 font-medium tracking-wide hover:text-black  capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-lg hover:bg-transparent text-white  bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../../hooks/useRole";
 import logo from "../../assets/img/logo.png";
+import { RiCloseLargeFill, RiMenu3Line } from "react-icons/ri";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
@@ -13,7 +14,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [role] = useRole();
   console.log(role);
-
   const navLinks = (
     <>
       {user && (
@@ -48,14 +48,14 @@ const Navbar = () => {
     }
   };
   return (
-    <Container>
-      <nav className="relative bg-white  dark:bg-gray-800">
-        <div className="py-4">
+    <nav className="relative   dark:bg-gray-800">
+      <Container>
+        <div className="py-3">
           <div className="lg:flex lg:items-center lg:justify-between">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-bold">
                 <Link to="/">
-                  <img className="w-40" src={logo} alt="" />
+                  <img className="w-32 md:w-36" src={logo} alt="" />
                 </Link>
               </h2>
 
@@ -68,35 +68,9 @@ const Navbar = () => {
                   aria-label="toggle menu"
                 >
                   {!isOpen ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4 8h16M4 16h16"
-                      />
-                    </svg>
+                    <RiMenu3Line className="text-xl"></RiMenu3Line>
                   ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
+                    <RiCloseLargeFill className="text-[18px]"></RiCloseLargeFill>
                   )}
                 </button>
               </div>
@@ -125,11 +99,7 @@ const Navbar = () => {
                         className="btn btn-ghost btn-circle avatar"
                       >
                         <div className="w-10 rounded-full">
-                          <img
-                            alt="Tailwind CSS Navbar component"
-                            src={user?.photoURL ? user?.photoURL : ""}
-                            id="userName"
-                          />
+                          <img src={user?.photoURL} />
                           <Tooltip
                             className="z-50"
                             variant="info"
@@ -171,8 +141,8 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </nav>
-    </Container>
+      </Container>
+    </nav>
   );
 };
 
