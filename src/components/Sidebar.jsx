@@ -2,20 +2,25 @@ import { useState } from "react";
 import { GrLogout } from "react-icons/gr";
 // import { FcSettings } from "react-icons/fc";
 import { BsFillHouseAddFill } from "react-icons/bs";
-import { AiOutlineBars } from "react-icons/ai";
 // import { BsGraphUp } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { MdOutlineAddTask, MdOutlineHistoryToggleOff } from "react-icons/md";
+import {
+  MdClose,
+  MdOutlineAddTask,
+  MdOutlineHistoryToggleOff,
+} from "react-icons/md";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../hooks/useRole";
 import { FaListUl } from "react-icons/fa";
 import { FaPeopleRoof, FaRegMessage } from "react-icons/fa6";
+import logo from "../assets/img/logo.png";
+import { RiMenu3Fill } from "react-icons/ri";
 
 const Sidebar = () => {
   const { logoutUser } = useAuth();
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState(true);
   const navigate = useNavigate();
   const [role] = useRole();
   // console.log(role);
@@ -31,16 +36,20 @@ const Sidebar = () => {
         <div>
           <div className="block cursor-pointer p-4 font-bold">
             <Link to="/">
-              <h2 className="text-xl font-black">Employee Management</h2>
+              <img className="w-32" src={logo} alt="" />
             </Link>
           </div>
         </div>
 
         <button
           onClick={handleToggle}
-          className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-200"
+          className="mobile-menu-button p-4 focus:outline-none"
         >
-          <AiOutlineBars className="h-5 w-5" />
+          {isActive ? (
+            <RiMenu3Fill className="text-[18px]"></RiMenu3Fill>
+          ) : (
+            <MdClose className="text-xl"></MdClose>
+          )}
         </button>
       </div>
 
@@ -52,9 +61,9 @@ const Sidebar = () => {
       >
         <div>
           <div>
-            <div className="w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center  mx-auto">
+            <div className="w-full hidden md:flex px-4 py-2 justify-start items-center  mx-auto">
               <Link to="/">
-                <h2 className="text-xl font-black">Employee Management</h2>
+                <img className="w-32 md:w-36" src={logo} alt="" />
               </Link>
             </div>
           </div>
@@ -72,9 +81,9 @@ const Sidebar = () => {
                     end
                     to="/dashboard"
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5 rounded-md hover:text-[#2461E9]  transition-colors duration-300 transform  hover:bg-gray-300 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
+                          ? "bg-[#3a89ff42]  text-[#2461E9]"
                           : "text-gray-600"
                       }`
                     }
@@ -87,9 +96,9 @@ const Sidebar = () => {
                   <NavLink
                     to="payment-history"
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5 rounded-md hover:text-[#2461E9] transition-colors duration-300 transform  hover:bg-gray-300 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
+                          ? "bg-[#3a89ff42] text-[#2461E9]"
                           : "text-gray-600"
                       }`
                     }
@@ -109,9 +118,9 @@ const Sidebar = () => {
                   <NavLink
                     to="/dashboard/employee-list"
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5 rounded-md hover:text-[#2461E9] transition-colors duration-300 transform  hover:bg-gray-300  ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
+                          ? "bg-[#3a89ff42]  text-[#2461E9]"
                           : "text-gray-600"
                       }`
                     }
@@ -123,9 +132,9 @@ const Sidebar = () => {
                   <NavLink
                     to="/dashboard/progress"
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5 rounded-md hover:text-[#2461E9]  transition-colors duration-300 transform  hover:bg-gray-300 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
+                          ? "bg-[#3a89ff42]  text-[#2461E9]"
                           : "text-gray-600"
                       }`
                     }
@@ -142,9 +151,9 @@ const Sidebar = () => {
                   <NavLink
                     to="/dashboard/admin/all-employee"
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5 rounded-md hover:text-[#2461E9] transition-colors duration-300 transform  hover:bg-gray-300 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
+                          ? "bg-gray-300  bg-[#3a89ff42]  text-[#2461E9]"
                           : "text-gray-600"
                       }`
                     }
@@ -156,9 +165,9 @@ const Sidebar = () => {
                   <NavLink
                     to="/dashboard/admin/messages"
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   rounded-md hover:text-[#2461E9] ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
+                          ? "bg-[#3a89ff42]  text-[#2461E9]"
                           : "text-gray-600"
                       }`
                     }
@@ -194,7 +203,7 @@ const Sidebar = () => {
               navigate("/login");
               toast.success("Logout Successfull");
             }}
-            className="flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform"
+            className="flex w-full items-center px-4 py-2 mt-5 hover:bg-[#3a89ff42]  hover:text-[#2461E9] hover:bg-gray-300 rounded-md transition-colors duration-300 transform"
           >
             <GrLogout className="w-5 h-5" />
 

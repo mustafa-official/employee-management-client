@@ -53,7 +53,10 @@ const SalaryAdjustModal = ({ closeModal, isOpen, employee }) => {
                     className="block w-full px-2 py-2  mt-1  text-[#010313] bg-[#ffffff69] border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   />
                 </div>
-                <button className="btn mt-4" type="submit">
+                {/* <button className="btn mt-4" type="submit">
+                  Update Salary
+                </button> */}
+                <button className="px-4 py-2  mt-4 font-medium tracking-wide capitalize transition-colors duration-300 transform border  rounded-lg   bg-[#3d6fdb] hover:bg-[#5888ee]  text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                   Update Salary
                 </button>
               </form>

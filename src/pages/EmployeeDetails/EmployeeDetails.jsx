@@ -25,17 +25,11 @@ const EmployeeDetails = () => {
     },
   });
 
-
-
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <div className="flex flex-col items-center lg:gap-14 gap-10 justify-center md:mt-4">
-      <div className="bg-white shadow-lg rounded-2xl w-4/5 md:w-3/5">
-        <img
-          alt="profile"
-          src="https://wallpapercave.com/wp/wp10784415.jpg"
-          className="w-full mb-4 rounded-t-lg h-36"
-        />
+      <div className="bg-white border border-gray-300 rounded-2xl w-4/5 md:w-3/5">
+        <div className="w-full mb-4 bg-[#4d7fecea] rounded-t-lg h-36"></div>
         <div className="flex flex-col items-center justify-center p-4 -mt-16">
           <a href="#" className="relative block">
             <img
@@ -45,8 +39,8 @@ const EmployeeDetails = () => {
             />
           </a>
 
-          <p className="p-1 mt-3 px-4 text-sm capitalize text-white bg-pink-500 rounded-full">
-            {employee.role}
+          <p className="p-1 mt-3 px-4 text-xs capitalize text-white bg-[#4d7fecea] rounded-full">
+            {employee.designation}
           </p>
           <p className="mt-2 text-xl font-medium text-gray-800 ">
             {employee.name}

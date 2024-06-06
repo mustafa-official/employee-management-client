@@ -102,7 +102,7 @@ const AddWork = () => {
             <div>
               <button
                 type="submit"
-                className="bg-rose-500 w-full rounded-md py-2 text-white"
+                className="bg-[#3471f5] hover:bg-[#4b7de9] w-full rounded-md py-2 text-white"
               >
                 Add Task
               </button>

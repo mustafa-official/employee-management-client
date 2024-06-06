@@ -42,7 +42,7 @@ const ProgressTask = () => {
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 ">All Task</h2>
 
-        <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">
+        <span className="px-3 py-1 text-xs font-bold text-blue-600 bg-blue-100 rounded-full ">
           {tasks?.length} Tasks
         </span>
       </div>
@@ -52,11 +52,11 @@ const ProgressTask = () => {
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden border border-gray-200  md:rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+                <thead className="bg-[#4d7fecea]">
                   <tr>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-gray-800"
                     >
                       <div className="flex items-center gap-x-3">
                         <select className="bg-gray-50 border rounded-md border-gray-400 p-1" onChange={handleName}>
@@ -71,7 +71,7 @@ const ProgressTask = () => {
                     </th>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Email</span>
@@ -79,7 +79,7 @@ const ProgressTask = () => {
                     </th>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Working Hours</span>
@@ -87,7 +87,7 @@ const ProgressTask = () => {
                     </th>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-gray-800"
                     >
                       <div className="flex items-center gap-x-3">
                         <select className="bg-gray-50 border rounded-md border-gray-400 p-1" onChange={handleMonth}>
@@ -109,7 +109,7 @@ const ProgressTask = () => {
                     </th>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Task</span>
@@ -120,24 +120,24 @@ const ProgressTask = () => {
                 <tbody className="bg-white divide-y divide-gray-200 ">
                   {tasks?.map((task) => (
                     <tr key={task?._id}>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {task?.name}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {task?.email}
                       </td>
 
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {task?.worked_hours} Hours
                       </td>
 
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {moment(task?.date, "M/D/YYYY").format("MMMM D, YYYY")}
                       </td>
                       <td className="px-4 py-4 text-sm whitespace-nowrap">
                         <div className="flex items-center gap-x-2">
                           <p
-                            className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60
+                            className="px-3 py-1 rounded-full text-blue-500 font-bold bg-blue-100/60
                                text-xs"
                           >
                             {task?.task}

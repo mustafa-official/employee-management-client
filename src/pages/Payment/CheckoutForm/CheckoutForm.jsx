@@ -191,10 +191,22 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
               },
             }}
           />
-          <button
+          {/* <button
             disabled={!stripe || !clientSecret}
             className="btn text-white mt-4 bg-[#9e2146]"
             type="submit"
+          >
+            {loading ? (
+              <ImSpinner9 className="animate-spin m-auto"></ImSpinner9>
+            ) : (
+              "Pay Now"
+            )}
+          </button> */}
+
+          <button
+            disabled={!stripe || !clientSecret}
+            type="submit"
+            className="px-4 mt-4 py-2 font-medium tracking-wide  capitalize transition-colors duration-300 transform border  rounded-lg   bg-[#3d6fdb] hover:bg-[#5888ee]  text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
           >
             {loading ? (
               <ImSpinner9 className="animate-spin m-auto"></ImSpinner9>

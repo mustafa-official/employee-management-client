@@ -32,16 +32,17 @@ const Contact = () => {
     }
   };
   return (
-    <section className="min-h-screen bg-[#F3F4F6] ">
-      <div className="container flex flex-col min-h-screen px-6 mx-auto">
-        <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
+    <section className="bg-[#F3F4F6] ">
+      <div className="container flex flex-col items-center px-6 mx-auto">
+        <div className="flex-1 lg:flex lg:items-center py-12 lg:-mx-6">
           <div className="text-gray-800 lg:w-1/2 lg:mx-6">
             <h1 className="text-2xl font-bold capitalize lg:text-4xl">
               Get a quote
             </h1>
 
             <p className="max-w-xl text-[18px] mt-3">
-            Ask us anything anytime; we’re here to help, and we’d love to hear your feedback and suggestions.
+              Ask us anything anytime; we’re here to help, and we’d love to hear
+              your feedback and suggestions.
             </p>
 
             <div className="mt-6 space-y-8 md:mt-8">
@@ -67,7 +68,7 @@ const Contact = () => {
                 </svg>
 
                 <span className="mx-2 text-gray-800 truncate w-72">
-                  Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522
+                  Cecilia Chapman 711-2880 Nulla St
                 </span>
               </p>
 
@@ -113,16 +114,10 @@ const Contact = () => {
                 </span>
               </p>
             </div>
-
-            
           </div>
 
-          <div className="mt-8 lg:w-1/2 lg:mx-6">
-            <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-xl rounded-xl dark:bg-gray-900 lg:max-w-lg">
-              <h1 className="text-xl md:text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                Contact form
-              </h1>
-
+          <div className="lg:w-1/2 lg:mx-6">
+            <div className="w-full px-8 pb-8 pt-4 mx-auto overflow-hidden bg-white shadow-xl rounded-xl dark:bg-gray-900 lg:max-w-lg">
               <form onSubmit={handleForm} className="mt-4">
                 <div className="flex-1">
                   <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">

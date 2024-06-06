@@ -79,7 +79,7 @@ const AllEmployee = () => {
     setIsOpen(false);
     document.body.classList.remove("modal-open");
   };
-console.log(employee);
+  console.log(employee);
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <section className="container px-4 mx-auto pt-4">
@@ -96,11 +96,11 @@ console.log(employee);
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden border border-gray-200  md:rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+                <thead className="bg-[#4d7fecea]">
                   <tr>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Name</span>
@@ -108,7 +108,7 @@ console.log(employee);
                     </th>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Designation</span>
@@ -116,7 +116,7 @@ console.log(employee);
                     </th>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Role</span>
@@ -125,20 +125,20 @@ console.log(employee);
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <span>Make HR</span>
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <span>Salary</span>
                     </th>
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-white"
                     >
                       <span>Action</span>
                     </th>
@@ -153,23 +153,38 @@ console.log(employee);
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                         {employee?.designation}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm capitalize text-gray-500  whitespace-nowrap">
                         {employee?.role}
                       </td>
 
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                        <button
+                        {/* <button
                           onClick={() => handleMakeHR(employee)}
                           disabled={employee?.role === "hr"}
                           className="btn disabled:cursor-not-allowed"
                         >
                           Make HR
+                        </button> */}
+
+                        <button
+                          onClick={() => handleMakeHR(employee)}
+                          disabled={employee?.role === "hr"}
+                          className="px-4  disabled:cursor-not-allowed py-2 font-medium tracking-wide  capitalize transition-colors duration-300 transform border  rounded-lg   bg-[#3d6fdb] hover:bg-[#5888ee]  text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+                        >
+                          Make HR
                         </button>
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                        <button
+                        {/* <button
                           onClick={() => openModal(employee)}
                           className="btn disabled:cursor-not-allowed"
+                        >
+                          Adjust
+                        </button> */}
+
+                        <button
+                          onClick={() => openModal(employee)}
+                          className="px-4  disabled:cursor-not-allowed py-2 font-medium tracking-wide  capitalize transition-colors duration-300 transform border  rounded-lg   bg-[#3d6fdb] hover:bg-[#5888ee]  text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
                         >
                           Adjust
                         </button>
@@ -179,7 +194,7 @@ console.log(employee);
                         {!employee?.isFired && (
                           <button
                             onClick={() => handleFire(employee)}
-                            className="btn"
+                            className="px-4  py-2 font-medium tracking-wide  capitalize transition-colors duration-300 transform border  rounded-lg   bg-red-500 hover:bg-[#f86868]  text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
                           >
                             Fire
                           </button>

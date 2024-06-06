@@ -49,16 +49,16 @@ const PaymentHistory = () => {
         <h2 className="text-lg font-medium text-gray-800 ">All Payment</h2>
       </div>
 
-      <div className="flex flex-col mt-6">
+      <div className="flex flex-col mt-4">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden border border-gray-200  md:rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+                <thead className="bg-[#4d7fecea]">
                   <tr>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Month</span>
@@ -66,7 +66,7 @@ const PaymentHistory = () => {
                     </th>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-white"
                     >
                       <div className="flex items-center gap-x-3">
                         <span>Amount</span>
@@ -75,7 +75,7 @@ const PaymentHistory = () => {
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-white"
                     >
                       <span>Transaction Id</span>
                     </th>
@@ -84,14 +84,14 @@ const PaymentHistory = () => {
                 <tbody className="bg-white divide-y divide-gray-200 ">
                   {paymentsInfo?.map((item) => (
                     <tr key={item?._id}>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                       {item?.month}, {item?.year}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         ${item?.price}
                       </td>
 
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {item?.transactionId}
                       </td>
                     </tr>
