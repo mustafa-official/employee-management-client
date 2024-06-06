@@ -7,7 +7,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Container from "../../shared/Container/Container";
 
 const Login = () => {
-  const { loginUser, loading, setLoading, googleLogin } = useAuth();
+  const { loginUser, loading, setLoading, googleLogin, logoutUser } = useAuth();
   const axiosPublic = useAxiosPublic();
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,6 +21,13 @@ const Login = () => {
 
     try {
       setLoading(true);
+      const { data } = await axiosPublic.post("/check-fired", { email: email });
+      if (data.isFired) {
+        await logoutUser();
+        toast.error("Your account has been Fired.");
+        setLoading(false);
+        return;
+      }
       await loginUser(email, password);
       navigate(location.state ? location.state : "/");
       toast.success("Login Successful");
@@ -35,6 +42,13 @@ const Login = () => {
     setLoading(true);
     try {
       const { user } = await googleLogin();
+      const { data } = await axiosPublic.post("/check-fired", { email: user?.email });
+      if (data.isFired) {
+        await logoutUser();
+        toast.error("Your account has been Fired.");
+        setLoading(false);
+        return;
+      }
       const userInfo = {
         role: "employee",
         name: user?.displayName,
