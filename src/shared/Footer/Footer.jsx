@@ -1,5 +1,6 @@
 import Container from "../Container/Container";
 import logo from "../../assets/img/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,9 +9,11 @@ const Footer = () => {
         <div className="pb-6 pt-16 lg:pt-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
-              <div className="flex justify-center text-teal-600 sm:justify-start">
-              <img className="w-32 md:w-36 lg:w-40" src={logo} alt="" />
-              </div>
+              <Link to="/">
+                <div className="flex justify-center text-teal-600 sm:justify-start">
+                  <img className="w-32 md:w-36 lg:w-40" src={logo} alt="" />
+                </div>
+              </Link>
 
               <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -290,7 +293,9 @@ const Footer = () => {
                         />
                       </svg>
 
-                      <span className="flex-1 text-gray-700">staff@genius.com</span>
+                      <span className="flex-1 text-gray-700">
+                        staff@genius.com
+                      </span>
                     </a>
                   </li>
 
