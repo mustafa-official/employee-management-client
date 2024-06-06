@@ -86,7 +86,7 @@ const AllEmployee = () => {
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 ">All Employee</h2>
 
-        <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">
+        <span className="px-3 py-1 text-xs text-blue-600 font-bold bg-blue-100 rounded-full ">
           {allEmployee?.length} Employees
         </span>
       </div>
@@ -147,17 +147,17 @@ const AllEmployee = () => {
                 <tbody className="bg-white divide-y divide-gray-200 ">
                   {allEmployee?.map((employee) => (
                     <tr key={employee?._id}>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {employee?.name}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {employee?.designation}
                       </td>
-                      <td className="px-4 py-4 text-sm capitalize text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm capitalize text-gray-800  whitespace-nowrap">
                         {employee?.role}
                       </td>
 
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {/* <button
                           onClick={() => handleMakeHR(employee)}
                           disabled={employee?.role === "hr"}
@@ -174,7 +174,7 @@ const AllEmployee = () => {
                           Make HR
                         </button>
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {/* <button
                           onClick={() => openModal(employee)}
                           className="btn disabled:cursor-not-allowed"
@@ -190,7 +190,7 @@ const AllEmployee = () => {
                         </button>
                       </td>
 
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {!employee?.isFired && (
                           <button
                             onClick={() => handleFire(employee)}
