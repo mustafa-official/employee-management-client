@@ -124,18 +124,18 @@ const Navbar = () => {
                     </div>
                   </>
                 ) : (
-                  <>
+                  <div className="flex lg:flex-row lg:gap-0 gap-5 flex-col">
                     <Link to="/login">
-                      <button className="px-6 py-2 font-medium tracking-wide text-black hover:text-white capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-full hover:bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                      <button className="px-4 py-1  md:px-6 md:py-2 font-medium tracking-wide text-black hover:text-white capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-full hover:bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                         Login
                       </button>
                     </Link>
                     <Link to="/register">
-                      <button className="px-6 ml-4 py-2 font-medium tracking-wide hover:text-black  capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-full hover:bg-transparent text-white  bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                      <button className="px-4 md:px-6 lg:ml-4 py-1 md:py-2 font-medium tracking-wide hover:text-black  capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-full hover:bg-transparent text-white  bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                         Sign Up
                       </button>
                     </Link>
-                  </>
+                  </div>
                 )}
               </div>
             </div>

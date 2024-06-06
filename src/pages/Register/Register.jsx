@@ -12,8 +12,14 @@ const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
 
 const Register = () => {
   const navigate = useNavigate();
-  const { registerUser, updateProfileInfo, loading, setLoading, googleLogin } =
-    useAuth();
+  const {
+    registerUser,
+    updateProfileInfo,
+    loading,
+    setLoading,
+    googleLogin,
+    logoutUser,
+  } = useAuth();
   const axiosPublic = useAxiosPublic();
   const {
     register,
@@ -64,6 +70,15 @@ const Register = () => {
     setLoading(true);
     try {
       const { user } = await googleLogin();
+      const { data } = await axiosPublic.post("/check-fired", {
+        email: user?.email,
+      });
+      if (data.isFired) {
+        await logoutUser();
+        toast.error("Your account has been Fired.");
+        setLoading(false);
+        return;
+      }
       const userInfo = {
         role: "employee",
         name: user?.displayName,
@@ -90,7 +105,7 @@ const Register = () => {
       <div className="flex mt-2 md:mt-5  w-full overflow-hidden justify-center items-center">
         <div className="flex flex-col w-full max-w-md box-border rounded-md py-6 px-10  bg-gray-100 text-gray-800">
           <div className="mb-6 text-center">
-            <h1 className="text-3xl font-bold">Sign Up</h1>
+            <h1 className="text-3xl mt-2 font-bold">Sign Up</h1>
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}

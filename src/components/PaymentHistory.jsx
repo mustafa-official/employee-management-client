@@ -1,13 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
-import useRole from "../hooks/useRole";
 import LoadingSpinner from "../shared/LoadingSpinner/LoadingSpinner";
 import { useState } from "react";
 
 const PaymentHistory = () => {
-  const [role] = useRole();
-
   // eslint-disable-next-line no-unused-vars
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
@@ -85,7 +82,7 @@ const PaymentHistory = () => {
                   {paymentsInfo?.map((item) => (
                     <tr key={item?._id}>
                       <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
-                      {item?.month}, {item?.year}
+                        {item?.month}, {item?.year}
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
                         ${item?.price}
@@ -112,7 +109,7 @@ const PaymentHistory = () => {
             className="px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-blue-500  hover:text-white"
           >
             <div className="flex items-center -mx-1">
-              <span className="mx-1">previous</span>
+              <span className="mx-1 text-sm">previous</span>
             </div>
           </button>
 
@@ -122,7 +119,7 @@ const PaymentHistory = () => {
               key={btnNum}
               className={`hidden ${
                 currentPage === btnNum ? "bg-blue-500 text-white" : ""
-              }  px-4 border py-2 mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-blue-500  hover:text-white`}
+              }  px-4 border  mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-blue-500  hover:text-white`}
             >
               {btnNum}
             </button>
@@ -131,10 +128,10 @@ const PaymentHistory = () => {
           <button
             disabled={currentPage === numberOfPages}
             onClick={() => handlePaginationBtn(currentPage + 1)}
-            className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-blue-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500"
+            className="px-4 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-blue-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500"
           >
             <div className="flex items-center -mx-1">
-              <span className="mx-1">Next</span>
+              <span className="mx-1 text-sm">Next</span>
             </div>
           </button>
         </div>
