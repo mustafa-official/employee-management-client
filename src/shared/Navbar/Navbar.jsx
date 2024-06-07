@@ -49,7 +49,7 @@ const Navbar = () => {
     }
   };
   return (
-    <nav className="relative   dark:bg-gray-800">
+    <nav className="relative backdrop-blur-md z-50  dark:bg-gray-800">
       <Container>
         <div className="py-3">
           <div className="lg:flex lg:items-center lg:justify-between">

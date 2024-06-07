@@ -3,6 +3,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
 import { ImSpinner9 } from "react-icons/im";
 import Container from "../../shared/Container/Container";
+import { ScrollRestoration } from "react-router-dom";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -33,9 +34,9 @@ const Contact = () => {
     }
   };
   return (
-    <section className="bg-[#F3F4F6] ">
+    <section className="bg-[#F3F4F6]">
       <Container>
-        <div className="flex lg:flex-row flex-col py-8 lg:py-10 justify-center items-center gap-5 lg:gap-0">
+        <div className="flex lg:flex-row flex-col py-8  lg:py-10 justify-center items-center gap-5 lg:gap-0">
           <div className="text-gray-800 w-full lg:w-1/2 lg:mx-6">
             <h1 className="text-2xl font-bold capitalize lg:text-4xl">
               Get a quote
@@ -174,6 +175,7 @@ const Contact = () => {
           </div>
         </div>
       </Container>
+      <ScrollRestoration></ScrollRestoration>
     </section>
   );
 };

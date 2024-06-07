@@ -1,3 +1,4 @@
+import { ScrollRestoration } from "react-router-dom";
 import Banner from "../../components/Banner";
 import Faq from "../../components/Faq";
 import Services from "../../components/Services";
@@ -18,6 +19,7 @@ const Home = () => {
 
         <Faq></Faq>
       </Container>
+      <ScrollRestoration></ScrollRestoration>
     </section>
   );
 };

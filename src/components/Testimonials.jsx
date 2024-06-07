@@ -11,7 +11,7 @@ import eight from "../assets/img/item8.jpg";
 
 const Testimonials = () => {
   return (
-    <div>
+    <div className="relative z-0">
       <h2 className="text-2xl font-bold text-center mt-8 md:mt-20 md:text-3xl">
         What Our Employees Are Saying
       </h2>

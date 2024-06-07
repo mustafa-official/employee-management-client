@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
 import Footer from "../shared/Footer/Footer";
+import Headroom from "react-headroom";
 
 const Root = () => {
-    return (
-        <>
+  return (
+    <>
+      <Headroom>
         <Navbar></Navbar>
-        <Outlet></Outlet>
-        <Footer></Footer>
-        </>
-    );
+      </Headroom>
+      <Outlet></Outlet>
+      <Footer></Footer>
+    </>
+  );
 };
 
 export default Root;

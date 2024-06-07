@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, ScrollRestoration, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -241,6 +241,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <ScrollRestoration></ScrollRestoration>
     </Container>
   );
 };
