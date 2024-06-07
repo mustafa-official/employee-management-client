@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
 import { ImSpinner9 } from "react-icons/im";
+import Container from "../../shared/Container/Container";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -33,9 +34,9 @@ const Contact = () => {
   };
   return (
     <section className="bg-[#F3F4F6] ">
-      <div className="container flex flex-col items-center px-6 mx-auto">
-        <div className="flex-1 lg:flex lg:items-center py-12 lg:-mx-6">
-          <div className="text-gray-800 lg:w-1/2 lg:mx-6">
+      <Container>
+        <div className="flex lg:flex-row flex-col py-8 lg:py-10 justify-center items-center gap-5 lg:gap-0">
+          <div className="text-gray-800 w-full lg:w-1/2 lg:mx-6">
             <h1 className="text-2xl font-bold capitalize lg:text-4xl">
               Get a quote
             </h1>
@@ -116,7 +117,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/2 lg:mx-6">
+          <div className="w-full lg:w-1/2 lg:mx-6">
             <div className="w-full px-8 pb-8 pt-4 mx-auto overflow-hidden bg-white shadow-xl rounded-xl dark:bg-gray-900 lg:max-w-lg">
               <form onSubmit={handleForm} className="mt-4">
                 <div className="flex-1">
@@ -172,7 +173,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

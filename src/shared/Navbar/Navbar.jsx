@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import useRole from "../../hooks/useRole";
 import logo from "../../assets/img/logo.png";
 import { RiCloseLargeFill, RiMenu3Line } from "react-icons/ri";
+import { TbLogout } from "react-icons/tb";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
@@ -64,13 +65,13 @@ const Navbar = () => {
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type="button"
-                  className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                  className="text-gray-900 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
                   aria-label="toggle menu"
                 >
                   {!isOpen ? (
-                    <RiMenu3Line className="text-xl"></RiMenu3Line>
+                    <RiMenu3Line className="text-[18px]"></RiMenu3Line>
                   ) : (
-                    <RiCloseLargeFill className="text-[18px]"></RiCloseLargeFill>
+                    <RiCloseLargeFill className="text-[16px]"></RiCloseLargeFill>
                   )}
                 </button>
               </div>
@@ -84,14 +85,14 @@ const Navbar = () => {
                   : "opacity-0 -translate-x-full"
               } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center`}
             >
-              <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:mx-4">
+              <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-8 lg:mx-4">
                 {/* menuu */}
                 {navLinks}
               </div>
 
               <div className="flex items-center mt-4 lg:mt-0">
                 {user ? (
-                  <>
+                  <div>
                     <div className="dropdown dropdown-end">
                       <div
                         tabIndex={0}
@@ -114,15 +115,26 @@ const Navbar = () => {
                         className="mt-2 z-[1] p-2 shadow-md rounded-md border border-[#2461E9] menu menu-sm  dropdown-content bg-base-200 w-52"
                       >
                         <li>
-                          <button onClick={handleLogout}>Logout</button>
+                          <button
+                            className="flex items-center"
+                            onClick={() => handleLogout()}
+                          >
+                            <TbLogout className="text-[16px]"></TbLogout>
+                            Logout
+                          </button>
                         </li>
                       </ul>
-
-                      <div className="sm:hidden ">
-                        <button onClick={handleLogout}>Logout</button>
-                      </div>
                     </div>
-                  </>
+                    <div>
+                      <button
+                        onClick={() => handleLogout()}
+                        className="px-2 lg:hidden flex items-center gap-1 py-1 mt-3 text-[14px] md:text-[16px] font-medium tracking-wide hover:text-black  capitalize transition-colors duration-300 transform border border-[#2461E9] rounded-md hover:bg-transparent text-white  bg-[#2461E9] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+                      >
+                        <TbLogout className="text-[16px]"></TbLogout>
+                        Logout
+                      </button>
+                    </div>
+                  </div>
                 ) : (
                   <div className="flex lg:flex-row lg:gap-0 gap-5 flex-col">
                     <Link to="/login">

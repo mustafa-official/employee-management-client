@@ -1,4 +1,3 @@
-import { MdOutlineHealthAndSafety } from "react-icons/md";
 import PropTypes from "prop-types";
 const ServicesCard = ({ bgColor, heading, description, icon }) => {
   return (
@@ -15,7 +14,7 @@ const ServicesCard = ({ bgColor, heading, description, icon }) => {
         <h2 className="mt-2 text-xl md:text-2xl text-center font-semibold text-gray-800 dark:text-white md:my-4">
           {heading}
         </h2>
-        <p className="mt-2 text-[14px] md:text-[16px] text-center text-gray-700 dark:text-gray-200">
+        <p className="mt-2 text-[14px] md:text-[16px] text-center  text-gray-700 dark:text-gray-200">
           {description}
         </p>
       </div>
@@ -27,5 +26,6 @@ ServicesCard.propTypes = {
   bgColor: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
+  icon: PropTypes.node,
 };
 export default ServicesCard;
