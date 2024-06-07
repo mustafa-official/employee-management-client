@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useAuth from "../../hooks/useAuth";
-import { ImSpinner9 } from "react-icons/im";
+import { ImSpinner3 } from "react-icons/im";
 import Container from "../../shared/Container/Container";
 
 const img_hosting_key = import.meta.env.VITE_IMGBB_API_KEY;
@@ -208,7 +208,7 @@ const Register = () => {
                 className="bg-[#2461E9] hover:bg-[#3768d1] disabled:cursor-not-allowed cursor-pointer w-full rounded-md py-3 text-white"
               >
                 {loading ? (
-                  <ImSpinner9 className="animate-spin m-auto"></ImSpinner9>
+                  <ImSpinner3 className="animate-spin m-auto"></ImSpinner3>
                 ) : (
                   "Continue"
                 )}

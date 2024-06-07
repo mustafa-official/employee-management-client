@@ -35,7 +35,7 @@ const ProgressTask = () => {
   const handleMonth = (e) => {
     setMonth(e.target.value);
   };
-  console.log(month);
+  
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <section className="container px-4 mx-auto">

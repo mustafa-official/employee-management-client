@@ -84,7 +84,6 @@ const AllEmployee = () => {
     document.body.classList.remove("modal-open");
   };
 
-  console.log(layout);
 
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (

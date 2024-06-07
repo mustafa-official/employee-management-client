@@ -1,8 +1,13 @@
-import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  ScrollRestoration,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
-import { ImSpinner9 } from "react-icons/im";
+import { ImSpinner3 } from "react-icons/im";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Container from "../../shared/Container/Container";
 
@@ -42,7 +47,9 @@ const Login = () => {
     setLoading(true);
     try {
       const { user } = await googleLogin();
-      const { data } = await axiosPublic.post("/check-fired", { email: user?.email });
+      const { data } = await axiosPublic.post("/check-fired", {
+        email: user?.email,
+      });
       if (data.isFired) {
         await logoutUser();
         toast.error("Your account has been Fired.");
@@ -118,7 +125,7 @@ const Login = () => {
                 className="bg-[#2461E9] hover:bg-[#3768d1] disabled:cursor-not-allowed cursor-pointer w-full rounded-md py-3 text-white"
               >
                 {loading ? (
-                  <ImSpinner9 className="animate-spin m-auto"></ImSpinner9>
+                  <ImSpinner3 className="animate-spin m-auto"></ImSpinner3>
                 ) : (
                   "Continue"
                 )}

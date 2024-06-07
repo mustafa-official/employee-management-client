@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
-import { ImSpinner9 } from "react-icons/im";
+import { ImSpinner3 } from "react-icons/im";
 import Container from "../../shared/Container/Container";
 import { ScrollRestoration } from "react-router-dom";
 
@@ -165,7 +165,7 @@ const Contact = () => {
                   className="w-full disabled:cursor-not-allowed px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                 >
                   {loading ? (
-                    <ImSpinner9 className="animate-spin m-auto"></ImSpinner9>
+                    <ImSpinner3 className="animate-spin m-auto"></ImSpinner3>
                   ) : (
                     "get in touch"
                   )}

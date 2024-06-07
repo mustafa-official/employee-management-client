@@ -1,16 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { FaUser } from "react-icons/fa";
+import LoadingSpinner from "../shared/LoadingSpinner/LoadingSpinner";
 
 const Messages = () => {
   const axiosSecure = useAxiosSecure();
-  const { data: messages = [] } = useQuery({
+  const { data: messages = [], isLoading } = useQuery({
     queryKey: ["messages"],
     queryFn: async () => {
       const { data } = await axiosSecure.get("/messages");
       return data;
     },
   });
+
+  if(isLoading) return <LoadingSpinner></LoadingSpinner>
   return (
     <div>
       <h2 className="text-lg flex  gap-2 flex-wrap items-center font-medium text-gray-800 ">

@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import useAuth from "../../../hooks/useAuth";
 import moment from "moment";
 import { IoIosClose } from "react-icons/io";
-import { ImSpinner9 } from "react-icons/im";
+import { ImSpinner3 } from "react-icons/im";
 import { useQuery } from "@tanstack/react-query";
 
 const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
@@ -209,7 +209,7 @@ const CheckoutForm = ({ salary, closeModal, employeeEmail }) => {
             className="px-4 mt-4 py-2 font-medium tracking-wide  capitalize transition-colors duration-300 transform border  rounded-lg   bg-[#3d6fdb] hover:bg-[#5888ee]  text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
           >
             {loading ? (
-              <ImSpinner9 className="animate-spin m-auto"></ImSpinner9>
+              <ImSpinner3 className="animate-spin m-auto"></ImSpinner3>
             ) : (
               "Pay Now"
             )}

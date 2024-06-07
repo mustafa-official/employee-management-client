@@ -14,6 +14,7 @@ import ProgressTask from "../pages/ProgressTask/ProgressTask";
 import AllEmployee from "../pages/AllEmployee/AllEmployee";
 import Contact from "../pages/Contact/Contact";
 import Messages from "../components/Messages";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -49,32 +50,64 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <AddWork></AddWork>,
+        element: (
+          <PrivateRoute>
+            <AddWork></AddWork>
+          </PrivateRoute>
+        ),
       },
       {
         path: "payment-history",
-        element: <PaymentHistory></PaymentHistory>,
+        element: (
+          <PrivateRoute>
+            <PaymentHistory></PaymentHistory>
+          </PrivateRoute>
+        ),
       },
       {
         path: "employee-list",
-        element: <EmployeeList></EmployeeList>,
+        element: (
+          <PrivateRoute>
+            <EmployeeList></EmployeeList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "details/:email",
-        element: <EmployeeDetails></EmployeeDetails>,
+        element: (
+          <PrivateRoute>
+            <EmployeeDetails></EmployeeDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "progress",
-        element: <ProgressTask></ProgressTask>,
+        element: (
+          <PrivateRoute>
+            <ProgressTask></ProgressTask>
+          </PrivateRoute>
+        ),
       },
       {
         path: "admin/all-employee",
-        element: <AllEmployee></AllEmployee>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AllEmployee></AllEmployee>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "admin/messages",
-        element: <Messages></Messages>
-      }
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <Messages></Messages>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
