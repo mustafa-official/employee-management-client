@@ -19,7 +19,7 @@ const Navbar = () => {
     <>
       {user && (
         <NavLink
-          to="/dashboard"
+          to={`${role === 'admin' ? 'dashboard/admin/all-employee': role === 'hr'? 'dashboard/employee-list': 'dashboard' }`}
           className={({ isActive }) =>
             isActive ? "  font-bold text-[#2461E9]" : ""
           }
@@ -99,15 +99,13 @@ const Navbar = () => {
                         role="button"
                         className="btn btn-ghost btn-circle avatar"
                       >
-                        <div className="w-10 rounded-full">
+                        <div
+                          data-tooltip-id="name"
+                          data-tooltip-content={`${user?.displayName}`}
+                          className="w-10 rounded-full"
+                        >
                           <img src={user?.photoURL} />
-                          <Tooltip
-                            className="z-50"
-                            variant="info"
-                            anchorId="userName"
-                            place="top"
-                            content={user?.displayName}
-                          ></Tooltip>
+                          <Tooltip id="name"></Tooltip>
                         </div>
                       </div>
                       <ul

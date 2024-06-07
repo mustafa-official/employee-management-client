@@ -29,7 +29,7 @@ const TrustedCompany = () => {
       <h2 className="text-2xl font-bold text-center mt-8 md:mt-20 md:text-3xl">
         Trusted By 15,000+ Companies
       </h2>
-      <Marquee direction="right" pauseOnHover={true} speed={90}>
+      <Marquee direction="right" pauseOnHover={true} speed={80}>
         <div className="flex mt-10 gap-14 ml-14">
           <img src={two} alt="" />
           <img src={three} alt="" />
