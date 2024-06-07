@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const [role] = useRole();
-  console.log(role);
+  // console.log(role);
   const navLinks = (
     <>
       {user && (

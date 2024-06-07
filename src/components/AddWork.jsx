@@ -46,7 +46,7 @@ const AddWork = () => {
       date,
       worked_hours,
     };
-    console.log(date, task, worked_hours);
+    // console.log(date, task, worked_hours);
 
     const { data } = await axiosSecure.post("/add-task", newTask);
     if (data.insertedId) {

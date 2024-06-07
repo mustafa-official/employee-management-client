@@ -39,7 +39,7 @@ const Register = () => {
       });
       if (res.data.success) {
         const image = res.data.data.display_url;
-        console.log(image);
+        // console.log(image);
         const userInfo = {
           role: data.role,
           name: data.name,
