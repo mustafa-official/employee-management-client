@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { FaUser } from "react-icons/fa";
 import LoadingSpinner from "../shared/LoadingSpinner/LoadingSpinner";
+import { Helmet } from "react-helmet-async";
 
 const Messages = () => {
   const axiosSecure = useAxiosSecure();
@@ -16,6 +17,9 @@ const Messages = () => {
   if(isLoading) return <LoadingSpinner></LoadingSpinner>
   return (
     <div>
+      <Helmet>
+        <title>Dashboard | Messages</title>
+      </Helmet>
       <h2 className="text-lg flex  gap-2 flex-wrap items-center font-medium text-gray-800 ">
         All Message
         <span className="px-3 py-1 text-xs text-blue-600 font-bold bg-blue-100 rounded-full ">

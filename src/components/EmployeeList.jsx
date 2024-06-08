@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import PaymentModal from "../modal/PaymentModal";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const EmployeeList = () => {
   const axiosSecure = useAxiosSecure();
@@ -76,6 +77,9 @@ const EmployeeList = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <section className="container px-4 mx-auto pt-4">
+      <Helmet>
+        <title>Dashboard | Employee List</title>
+      </Helmet>
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 ">Total Employee</h2>
 

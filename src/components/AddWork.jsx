@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import EmployeeTask from "./EmployeeTask";
 import LoadingSpinner from "../shared/LoadingSpinner/LoadingSpinner";
-import useRole from "../hooks/useRole";
+import { Helmet } from "react-helmet-async";
 
 const AddWork = () => {
   // eslint-disable-next-line no-unused-vars
@@ -16,7 +16,6 @@ const AddWork = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [selectedTask, setSelectedTask] = useState("");
   const axiosSecure = useAxiosSecure();
-  const [role] = useRole();
   const handleChange = (event) => {
     setSelectedTask(event.target.value);
   };
@@ -62,55 +61,56 @@ const AddWork = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <div>
-      {role === "employee" && (
-        <section>
-          <form
-            className="grid lg:grid-cols-4 md:grid-cols-2 px-3 grid-cols-1 gap-y-5 items-center gap-x-5"
-            onSubmit={handleSubmit}
-          >
-            <div>
-              <select
-                className="border w-full py-2 px-2 border-gray-400 rounded-md"
-                required
-                value={selectedTask}
-                onChange={handleChange}
-              >
-                <option value="">Select Task</option>
-                <option value="Sales">Sales</option>
-                <option value="Support">Support</option>
-                <option value="Content">Content</option>
-                <option value="Paper-work">Paper-work</option>
-                {/* Add more options if needed */}
-              </select>
-            </div>
-            <div>
-              <input
-                className=" py-2 px-3 border border-gray-400 w-full rounded-md"
-                name="hours"
-                required
-                type="number"
-                placeholder="Hours Worked"
-              />
-            </div>
-            <div className="flex flex-col gap-3 w-full">
-              <DatePicker
-                readOnly
-                className="p-2 rounded-md border w-full border-gray-400"
-                selected={startDate}
-              />
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="bg-[#3471f5] hover:bg-[#4b7de9] w-full rounded-md py-2 text-white"
-              >
-                Add Task
-              </button>
-            </div>
-          </form>
-          <EmployeeTask tasks={tasks}></EmployeeTask>
-        </section>
-      )}
+      <Helmet>
+        <title>Dashboard | Add Work</title>
+      </Helmet>
+      <section>
+        <form
+          className="grid lg:grid-cols-4 md:grid-cols-2 px-3 grid-cols-1 gap-y-5 items-center gap-x-5"
+          onSubmit={handleSubmit}
+        >
+          <div>
+            <select
+              className="border w-full py-2 px-2 border-gray-400 rounded-md"
+              required
+              value={selectedTask}
+              onChange={handleChange}
+            >
+              <option value="">Select Task</option>
+              <option value="Sales">Sales</option>
+              <option value="Support">Support</option>
+              <option value="Content">Content</option>
+              <option value="Paper-work">Paper-work</option>
+              {/* Add more options if needed */}
+            </select>
+          </div>
+          <div>
+            <input
+              className=" py-2 px-3 border border-gray-400 w-full rounded-md"
+              name="hours"
+              required
+              type="number"
+              placeholder="Hours Worked"
+            />
+          </div>
+          <div className="flex flex-col gap-3 w-full">
+            <DatePicker
+              readOnly
+              className="p-2 rounded-md border w-full border-gray-400"
+              selected={startDate}
+            />
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="bg-[#3471f5] hover:bg-[#4b7de9] w-full rounded-md py-2 text-white"
+            >
+              Add Task
+            </button>
+          </div>
+        </form>
+        <EmployeeTask tasks={tasks}></EmployeeTask>
+      </section>
     </div>
   );
 };

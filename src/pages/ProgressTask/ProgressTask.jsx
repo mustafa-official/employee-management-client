@@ -3,6 +3,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
 import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
 import moment from "moment";
+import { Helmet } from "react-helmet-async";
 
 const ProgressTask = () => {
   const axiosSecure = useAxiosSecure();
@@ -39,8 +40,11 @@ const ProgressTask = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <section className="container px-4 mx-auto">
+      <Helmet>
+        <title>Dashboard | Progress Task</title>
+      </Helmet>
       <div className="flex items-center gap-x-3">
-        <h2 className="text-lg font-medium text-gray-800 ">All Task</h2>
+        <h2 className="text-lg font-medium text-gray-800 ">Progress Task</h2>
 
         <span className="px-3 py-1 text-xs font-bold text-blue-600 bg-blue-100 rounded-full ">
           {tasks?.length} Tasks

@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import { ImSpinner3 } from "react-icons/im";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Container from "../../shared/Container/Container";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { loginUser, loading, setLoading, googleLogin, logoutUser } = useAuth();
@@ -79,6 +80,9 @@ const Login = () => {
   };
   return (
     <Container>
+      <Helmet>
+        <title>Staff Genius | Login</title>
+      </Helmet>
       <div className="flex mt-2 md:mt-5 justify-center items-center">
         <div className="flex flex-col w-full max-w-md box-border rounded-md py-6 px-10 bg-gray-100 text-gray-800">
           <div className="mb-8 text-center">

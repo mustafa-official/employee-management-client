@@ -8,6 +8,7 @@ import SalaryAdjustModal from "../../modal/SalaryAdjustModal";
 import EmployeeCard from "../../components/EmployeeCard";
 import { TfiLayoutGrid3, TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
+import { Helmet } from "react-helmet-async";
 
 const AllEmployee = () => {
   const axiosSecure = useAxiosSecure();
@@ -88,6 +89,9 @@ const AllEmployee = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <section>
+      <Helmet>
+        <title>Dashboard | All Employee</title>
+      </Helmet>
       <div className="flex container px-4 justify-between pt-4 items-center gap-x-3">
         <h2 className="text-lg flex  gap-2 flex-wrap items-center font-medium text-gray-800 ">
           All Employee

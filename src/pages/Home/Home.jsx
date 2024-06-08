@@ -5,10 +5,14 @@ import Services from "../../components/Services";
 import Testimonials from "../../components/Testimonials";
 import TrustedCompany from "../../components/TrustedCompany";
 import Container from "../../shared/Container/Container";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <section>
+      <Helmet>
+        <title>Staff Genius</title>
+      </Helmet>
       <div>
         <Banner></Banner>
       </div>

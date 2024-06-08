@@ -15,6 +15,7 @@ import AllEmployee from "../pages/AllEmployee/AllEmployee";
 import Contact from "../pages/Contact/Contact";
 import Messages from "../components/Messages";
 import AdminRoute from "./AdminRoute";
+import HrRoute from "./HrRoute";
 
 const router = createBrowserRouter([
   {
@@ -68,7 +69,9 @@ const router = createBrowserRouter([
         path: "employee-list",
         element: (
           <PrivateRoute>
-            <EmployeeList></EmployeeList>
+            <HrRoute>
+              <EmployeeList></EmployeeList>
+            </HrRoute>
           </PrivateRoute>
         ),
       },
@@ -84,7 +87,9 @@ const router = createBrowserRouter([
         path: "progress",
         element: (
           <PrivateRoute>
-            <ProgressTask></ProgressTask>
+            <HrRoute>
+              <ProgressTask></ProgressTask>
+            </HrRoute>
           </PrivateRoute>
         ),
       },

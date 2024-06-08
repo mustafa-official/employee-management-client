@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ImSpinner3 } from "react-icons/im";
 import Container from "../../shared/Container/Container";
 import { ScrollRestoration } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -35,19 +36,22 @@ const Contact = () => {
   };
   return (
     <section className="bg-[#F3F4F6]">
+      <Helmet>
+        <title>Staff Genius | Contact</title>
+      </Helmet>
       <Container>
-        <div className="flex lg:flex-row flex-col py-8  lg:py-10 justify-center items-center gap-5 lg:gap-0">
+        <div className="flex lg:flex-row flex-col py-10 justify-center items-center gap-5 lg:gap-0">
           <div className="text-gray-800 w-full lg:w-1/2 lg:mx-6">
             <h1 className="text-2xl font-bold capitalize lg:text-4xl">
               Get a quote
             </h1>
 
-            <p className="max-w-xl text-[18px] mt-3">
+            <p className="max-w-xl text-[17px] mt-3">
               Ask us anything anytime; we’re here to help, and we’d love to hear
               your feedback and suggestions.
             </p>
 
-            <div className="mt-6 space-y-8 md:mt-8">
+            <div className="mt-6 space-y-4 md:space-y-8 md:mt-8">
               <p className="flex items-start -mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

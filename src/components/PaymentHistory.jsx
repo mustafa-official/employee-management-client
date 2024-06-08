@@ -3,6 +3,7 @@ import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import LoadingSpinner from "../shared/LoadingSpinner/LoadingSpinner";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const PaymentHistory = () => {
   // eslint-disable-next-line no-unused-vars
@@ -42,6 +43,9 @@ const PaymentHistory = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <section className="container px-4 mx-auto pt-4">
+      <Helmet>
+        <title>Dashboard | Payment History</title>
+      </Helmet>
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 ">All Payment</h2>
       </div>

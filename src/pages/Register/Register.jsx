@@ -6,6 +6,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useAuth from "../../hooks/useAuth";
 import { ImSpinner3 } from "react-icons/im";
 import Container from "../../shared/Container/Container";
+import { Helmet } from "react-helmet-async";
 
 const img_hosting_key = import.meta.env.VITE_IMGBB_API_KEY;
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
@@ -102,6 +103,9 @@ const Register = () => {
   };
   return (
     <Container>
+      <Helmet>
+        <title>Staff Genius | SignUp</title>
+      </Helmet>
       <div className="flex mt-2 md:mt-5  w-full overflow-hidden justify-center items-center">
         <div className="flex flex-col w-full max-w-md box-border rounded-md py-6 px-10  bg-gray-100 text-gray-800">
           <div className="mb-6 text-center">
