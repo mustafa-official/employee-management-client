@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard",
+        path: "add-work",
         element: (
           <PrivateRoute>
             <AddWork></AddWork>

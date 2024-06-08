@@ -79,7 +79,7 @@ const Sidebar = () => {
                 <>
                   <NavLink
                     end
-                    to="/dashboard"
+                    to="/dashboard/add-work"
                     className={({ isActive }) =>
                       `flex items-center px-4 py-2 my-5 rounded-md hover:text-[#2461E9]  transition-colors duration-300 transform  hover:bg-gray-300 ${
                         isActive
@@ -94,7 +94,7 @@ const Sidebar = () => {
                   </NavLink>
                   {/* My Listing */}
                   <NavLink
-                    to="payment-history"
+                    to="/dashboard/payment-history"
                     className={({ isActive }) =>
                       `flex items-center px-4 py-2 my-5 rounded-md hover:text-[#2461E9] transition-colors duration-300 transform  hover:bg-gray-300 ${
                         isActive

@@ -19,7 +19,7 @@ const Navbar = () => {
     <>
       {user && (
         <NavLink
-          to={`${role === 'admin' ? 'dashboard/admin/all-employee': role === 'hr'? 'dashboard/employee-list': 'dashboard' }`}
+          to={`${role === 'admin' ? 'dashboard/admin/all-employee': role === 'hr'? 'dashboard/employee-list': 'dashboard/add-work' }`}
           className={({ isActive }) =>
             isActive ? "  font-bold text-[#2461E9]" : ""
           }

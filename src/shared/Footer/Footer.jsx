@@ -17,7 +17,7 @@ const Footer = () => {
 
               <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
                 An employee management website streamlines HR tasks, boosts
-                productivity, and enhances employee engagement.
+                productivity & enhance employee engagement.
               </p>
 
               <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
