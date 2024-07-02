@@ -5,8 +5,9 @@ Live Link: https://employee-management-a45e0.web.app
 
 ### Steps
 
-**Install Project Dependencies:**:
-```sh npm install
+1. **Clone the Repository**:
+   ```sh
+   npm install
 
 ## Features
 
