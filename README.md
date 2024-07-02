@@ -3,15 +3,6 @@
 
 Live Link: https://employee-management-a45e0.web.app
 
-### Run Locally
-
-1. **Install Project Dependencies**:
-   ```sh
-   npm install
-2. **Start the Development Server**:
-    ```sh
-    npm run dev
-
 ## Features
 
 - Have a particular dashboard for Employees, HR, and Admin. They can manage their activity.
@@ -29,3 +20,12 @@ Live Link: https://employee-management-a45e0.web.app
 - Tailwind CSS
 - Firebase
 - JWT
+
+### Run Locally
+
+1. **Install Project Dependencies**:
+   ```sh
+   npm install
+2. **Start the Development Server**:
+    ```sh
+    npm run dev
