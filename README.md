@@ -3,11 +3,14 @@
 
 Live Link: https://employee-management-a45e0.web.app
 
-### Steps
+### Run Locally
 
-1. **Clone the Repository**:
+1. **Install Project Dependencies**:
    ```sh
    npm install
+2. **Start the Development Server**:
+    ```sh
+    npm run dev
 
 ## Features
 
