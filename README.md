@@ -27,5 +27,3 @@ Live Link: https://employee-management-a45e0.web.app
 **Install Project Dependencies:**:
 ```sh npm install
 
-**Install Project Dependencies:**:
-```sh npm install
