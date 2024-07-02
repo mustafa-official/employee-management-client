@@ -1,5 +1,5 @@
 # Staff Genius
-###### This employee management website tracks work progress, manages salaries, and maintains contract records. Employees update their tasks, while HR managers oversee updates and ensure secure payments without duplicates. Administrators manage roles, salaries, and handle terminations securely.
+#### This employee management website tracks work progress, manages salaries, and maintains contract records. Employees update their tasks, while HR managers oversee updates and ensure secure payments without duplicates. Administrators manage roles, salaries, and handle terminations securely.
 
 Live Link: https://employee-management-a45e0.web.app
 
