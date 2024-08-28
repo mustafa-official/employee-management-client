@@ -4,16 +4,16 @@ import PropTypes from "prop-types";
 
 const EmployeeCard = ({ employee }) => {
   return (
-    <div className="w-full px-8 py-4 mt-16 bg-white rounded-lg border-b-4 border border-b-[#2461E9] border-gray-300  dark:bg-gray-800">
+    <div className="w-full px-8 py-4 mt-16 bg-white rounded-lg border-b-4 border border-b-[#2461E9] border-gray-300  ">
       <div className="flex justify-center -mt-16">
         <img
-          className="object-cover w-16 h-16 border-2 border-blue-500 rounded-full dark:border-blue-400"
+          className="object-cover w-16 h-16 border-2 border-blue-500 rounded-full "
           alt="Testimonial avatar"
           src={employee?.photo}
         />
       </div>
 
-      <h2 className="mt-2 text-xl font-semibold text-gray-800 dark:text-white md:mt-0">
+      <h2 className="mt-2 text-xl font-semibold text-gray-800  md:mt-0">
         {employee?.name}
       </h2>
 

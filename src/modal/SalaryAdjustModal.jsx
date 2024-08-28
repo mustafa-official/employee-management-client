@@ -41,7 +41,7 @@ const SalaryAdjustModal = ({ closeModal, isOpen, employee }) => {
               &#8203;
             </span>
 
-            <div className="relative inline-block text-left align-bottom transition-all transform border-gray-400 border  bg-white shadow-lg rounded-lg dark:bg-gray-900 w-[80%] md:w-[70%] lg:w-[40%] my-4 py-4 px-3 sm:align-middle">
+            <div className="relative inline-block text-left align-bottom transition-all transform border-gray-400 border  bg-white shadow-lg rounded-lg  w-[80%] md:w-[70%] lg:w-[40%] my-4 py-4 px-3 sm:align-middle">
               <form onSubmit={handleSalaryUpdate}>
                 <div>
                   <label className="text-xs text-black">Salary</label>
@@ -50,7 +50,7 @@ const SalaryAdjustModal = ({ closeModal, isOpen, employee }) => {
                     name="salary"
                     defaultValue={employee?.salary}
                     type="number"
-                    className="block w-full px-2 py-2  mt-1  text-[#010313] bg-[#ffffff69] border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                    className="block w-full px-2 py-2  mt-1  text-[#010313] bg-[#ffffff69] border rounded-md    focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   />
                 </div>
                 {/* <button className="btn mt-4" type="submit">

@@ -19,7 +19,13 @@ const Navbar = () => {
     <>
       {user && (
         <NavLink
-          to={`${role === 'admin' ? 'dashboard/admin/all-employee': role === 'hr'? 'dashboard/employee-list': 'dashboard/add-work' }`}
+          to={`${
+            role === "admin"
+              ? "dashboard/admin/all-employee"
+              : role === "hr"
+              ? "dashboard/employee-list"
+              : "dashboard/add-work"
+          }`}
           className={({ isActive }) =>
             isActive ? "  font-bold text-[#2461E9]" : ""
           }
@@ -49,7 +55,7 @@ const Navbar = () => {
     }
   };
   return (
-    <nav className="relative backdrop-blur-md z-50  dark:bg-gray-800">
+    <nav className="relative backdrop-blur-md z-50  ">
       <Container>
         <div className="py-3">
           <div className="lg:flex lg:items-center lg:justify-between">
@@ -65,7 +71,7 @@ const Navbar = () => {
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type="button"
-                  className="text-gray-900 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                  className="text-gray-900  hover:text-gray-600  focus:outline-none focus:text-gray-600 "
                   aria-label="toggle menu"
                 >
                   {!isOpen ? (
@@ -83,7 +89,7 @@ const Navbar = () => {
                 isOpen
                   ? "translate-x-0 opacity-100"
                   : "opacity-0 -translate-x-full"
-              } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center`}
+              } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center`}
             >
               <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-8 lg:mx-4">
                 {/* menuu */}

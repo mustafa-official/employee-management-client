@@ -8,7 +8,7 @@ const Banner = () => {
     <div className="flex flex-col px-4 justify-center py-12 lg:py-4 md:px-14 bg-gradient-to-r bg-[#F3F4F6]   lg:flex-row lg:items-center">
       <div className="w-full lg:w-1/2">
         <div className="lg:max-w-xl">
-          <h1 className="text-3xl text-center md:text-left font-bold  text-gray-800 dark:text-white md:text-4xl lg:text-5xl">
+          <h1 className="text-3xl text-center md:text-left font-bold  text-gray-800  md:text-4xl lg:text-5xl">
             Empower Your{" "}
             <span className="bg-gradient-to-r from-[#00bcf5] via-[#2461E9] to-[#0057fa] text-transparent bg-clip-text bg-300% animate-gradient">
               Team

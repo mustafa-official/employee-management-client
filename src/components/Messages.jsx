@@ -14,7 +14,7 @@ const Messages = () => {
     },
   });
 
-  if(isLoading) return <LoadingSpinner></LoadingSpinner>
+  if (isLoading) return <LoadingSpinner></LoadingSpinner>;
   return (
     <div>
       <Helmet>
@@ -30,7 +30,7 @@ const Messages = () => {
         {messages?.map((message) => (
           <div
             key={message?._id}
-            className="flex flex-col border p-5 gap-1 w-full max-w-md divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800"
+            className="flex flex-col border p-5 gap-1 w-full max-w-md divide-y rounded-md "
           >
             <div className="flex justify-between">
               <div className="flex justify-center items-center space-x-3">
@@ -41,11 +41,11 @@ const Messages = () => {
                   <h4 className="font-bold text-[#2461E9] text-[18px]">
                     {message?.name}
                   </h4>
-                  <small className="dark:text-gray-600">{message?.email}</small>
+                  <small className="">{message?.email}</small>
                 </div>
               </div>
             </div>
-            <div className="space-y-2 text-sm dark:text-gray-600">
+            <div className="space-y-2 text-sm ">
               <p className="mt-3 text-justify">{message?.message}</p>
             </div>
           </div>
