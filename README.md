@@ -2,6 +2,8 @@
 #### This employee management website tracks work progress, manages salaries, and maintains contract records. Employees update their tasks, while HR managers oversee updates and ensure secure payments without duplicates. Administrators manage roles, salaries, and handle terminations securely.
 
 Live Link: https://employee-management-a45e0.web.app
+Admin username: mostofa@gmail.com
+Admin password: Mostofa@#$
 
 ## Features
 
@@ -23,9 +25,27 @@ Live Link: https://employee-management-a45e0.web.app
 
 ### Run Locally
 
-1. **Install Project Dependencies**:
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/your-username/your-repository.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```sh
+   cd your-repository
+   ```
+3. **Install Dependencies**:
    ```sh
    npm install
-2. **Start the Development Server**:
-    ```sh
-    npm run dev
+   ```
+4. **Run the Development Server Locally**:
+   ```sh
+   npm run dev
+   ```
+5. **Build the Project for Production**:
+   ```sh
+   npm run build
+   ```
+6. **Preview the Production Build**:
+   ```sh
+   npm run preview
+   ```
